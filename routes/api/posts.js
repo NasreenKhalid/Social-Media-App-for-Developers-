@@ -69,7 +69,7 @@ router.get("/:id", auth, async (req, res) => {
 // DELETE a post to api/posts Private route
 router.delete("/:id", auth, async (req, res) => {
   try {
-    const posts = await Post.findById(req.params.id);
+    const post = await Post.findById(req.params.id);
 
     if (!post) {
       return res.status(404).json({ msg: "Post not found" });
